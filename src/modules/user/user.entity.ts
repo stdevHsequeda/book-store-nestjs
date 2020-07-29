@@ -38,7 +38,7 @@ export class User extends BaseEntity {
   @ManyToMany(
     () => Role,
     role => role.users,
-    {eager: true}
+    { eager: true },
   )
   @JoinTable({ name: 'users_roles' })
   roles: Role[];
