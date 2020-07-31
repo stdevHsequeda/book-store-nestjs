@@ -6,7 +6,7 @@ export class UserDto {
   id: number;
 
   @IsNotEmpty()
-  userName: string;
+  username: string;
 
   @IsNotEmpty()
   email: string;
