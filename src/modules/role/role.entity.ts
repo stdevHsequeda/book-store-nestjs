@@ -9,6 +9,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { User } from '../user/user.entity';
+import {status} from '../../share/entity-status.enum'
 
 @Entity('roles')
 export class Role extends BaseEntity {
@@ -28,7 +29,7 @@ export class Role extends BaseEntity {
   @JoinTable({ name: 'users_roles' })
   users: User[];
 
-  @Column({ type: 'varchar', nullable: false, default: 'ACTIVE', length: 8 })
+  @Column({ type: 'varchar', nullable: false, default: status.ACTIVE, length: 8 })
   status: string;
 
   @CreateDateColumn({ type: 'timestamp', name: 'create_at' })
